@@ -12,6 +12,17 @@ end
 group :production do
   gem 'pg'
 end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.6'
+end
+
+group :development, :test do
+  gem 'factory_bot_rails'
+end
+
+gem 'bcrypt', '~> 3.1.7'
+
 gem 'rails_12factor', group: :production
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
