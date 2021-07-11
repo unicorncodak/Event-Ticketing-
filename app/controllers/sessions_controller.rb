@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+    before_action :check_logged_in, only: %i[ create new ]
     def new
     end
     def create
@@ -16,6 +17,12 @@ class SessionsController < ApplicationController
     def destroy
         # deletes user session
         session[:user_id] = nil
-        redirect_to root_path, notice: 'Logged Out'
+        redirect_to sign_in_path, notice: 'Logged Out'
+    end
+
+    def check_logged_in
+        if Current.user
+            redirect_back fallback_location: root_path
+        end
     end
 end

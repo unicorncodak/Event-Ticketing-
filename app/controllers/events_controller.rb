@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[ show edit update destroy ]
-
+  #before_action :require_user_logged_in!
+!
   # GET /events or /events.json
   def index
     @events = Event.all
