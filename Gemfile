@@ -22,7 +22,8 @@ group :development, :test do
 end
 
 gem 'bcrypt', '~> 3.1.7'
-
+gem 'bootstrap', '~> 4.1.3'
+gem 'jquery-rails'
 gem 'rails_12factor', group: :production
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
