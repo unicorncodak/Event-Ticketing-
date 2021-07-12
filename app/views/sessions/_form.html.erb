@@ -2,6 +2,11 @@
 
   <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
+                <% if notice %>
+                    <div class="alert alert-danger" role="alert">
+                        <%= notice %>
+                    </div>
+                <% end %>
                 <main>
                     <div class="container">
                         <div class="row justify-content-center">
