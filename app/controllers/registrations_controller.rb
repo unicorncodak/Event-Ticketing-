@@ -1,5 +1,5 @@
 class RegistrationsController < ApplicationController
-    # instantiates new user
+    before_action :check_logged_in, only: %i[ create new ]
     def new
         @user = User.new
     end
@@ -19,5 +19,11 @@ class RegistrationsController < ApplicationController
     def user_params
         # strong parameters
         params.require(:user).permit(:firstname, :lastname, :email, :password, :password_confirmation)
+    end
+
+    def check_logged_in
+        if Current.user
+            redirect_back fallback_location: root_path
+        end
     end
 end

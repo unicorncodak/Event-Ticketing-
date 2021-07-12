@@ -25,17 +25,13 @@ window.addEventListener('turbolinks:load', event => {
     const first = document.getElementById('flexRadioDefault1')
     const second = document.getElementById('flexRadioDefault2')
     first.addEventListener('click', event => {
-        hidden.value = "true"
+        hidden.value = 1
         event_price.style.display = "block"
     });
     second.addEventListener('click', event => {
-        hidden.value = "false"
+        hidden.value = 0
         event_price.style.display = "none"
     });
-
-    $('.datepicker').datepicker({ format: 'mm/dd/yyyy', startDate: '-3d' });
-    
-    console.log(hidden)
 });
 
 

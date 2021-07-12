@@ -9,5 +9,8 @@ class Event < ApplicationRecord
     validates :end_date, presence: true
     validates :start_time, presence: true
     validates :end_time, presence: true
-    validates :paid, presence: true
+
+    def self.get_category(category_id)
+        category = Category.where(id: category_id).pluck(:title)[0]
+    end
 end

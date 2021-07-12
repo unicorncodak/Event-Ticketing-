@@ -1,4 +1,65 @@
-<p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<div id="layoutSidenav_content">
+    <main>
+        
+        <div class="container-fluid px-4">
+        <h1 class="mt-4"><%= @event.name %></h1>
+        <% if notice %>
+            <div class="alert alert-danger" role="alert">
+                <%= notice %>
+            </div>
+        <% end %>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="<%= events_path %>">Events</a></li>
+            <li class="breadcrumb-item active"><%= @event.name %></li>
+        </ol>
+
+        <div class="ticket">
+  <div class="ticket--start">
+    <img src="https://i.ibb.co/W3cK42J/image-1.png"/>
+  </div>
+  <div class="ticket--center">
+    <div class="ticket--center--row">
+      <div class="ticket--center--col">
+        <span>Ticket for</span>
+        <strong><%= @event.name %> event</strong>
+      </div>
+    </div>
+    <div class="ticket--center--row">
+      <div class="ticket--center--col">
+        <span class="ticket--info--title">Date and time</span>
+        <span class="ticket--info--subtitle"><%= Date.parse(@event.start_date).strftime("%B %d, %Y") %></span>
+        <span class="ticket--info--content"><%= Time.parse(@event.start_time).strftime("%l:%M %P") + ' to ' + Time.parse(@event.end_time).strftime("%l:%M %P") %> (GMT+1)</span>
+      </div>
+      <div class="ticket--center--col">
+        <span class="ticket--info--title">Location</span>
+        <span class="ticket--info--subtitle">Location name</span>
+        <span class="ticket--info--content"><%= @event.location %></span>
+      </div>
+    </div>
+    <div class="ticket--center--row">
+      <div class="ticket--center--col">
+        <span class="ticket--info--title">Ticket type</span>
+        <span class="ticket--info--content"><%= @category %></span>
+      </div>
+      <div class="ticket--center--col">
+        <span class="ticket--info--title">Description</span>
+        <span  class="ticket--info--content"><%= @event.description %></span>
+      </div>
+    </div>
+  </div>
+  <div class="ticket--end">
+    <div><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Qrcode_wikipedia_fr_v2clean.png"></div>
+    <div><img src="https://qidoon.com/assets/img/logo.svg"/></div>
+    
+    
+  </div>
+</div>
+
+
+        <%= link_to 'Edit', edit_event_path(@event) %> |
+        <%= link_to 'Back', events_path %>
+
+        </div>
+    </main>
+</div>

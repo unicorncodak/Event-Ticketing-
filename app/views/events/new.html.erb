@@ -1,8 +1,13 @@
 <div id="layoutSidenav_content">
     <main>
-        <p id="notice"><%= notice %></p>
+        
         <div class="container-fluid px-4">
         <h1 class="mt-4">New Event</h1>
+        <% if notice %>
+            <div class="alert alert-danger" role="alert">
+                <%= notice %>
+            </div>
+        <% end %>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="<%= events_path %>">Events</a></li>
             <li class="breadcrumb-item active">New Events</li>

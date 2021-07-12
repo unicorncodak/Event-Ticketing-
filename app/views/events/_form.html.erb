@@ -30,7 +30,7 @@
 
   <div class="row mb-3">
     <div class="col-md-6">
-      <label for="startdate" class="form-label">Event Start Date* (MM/DD/YYYY)</label>
+      <label for="startdate" class="form-label">Event Start Date* (YYYY-MM-DD)</label>
       <%= form.text_field :start_date, class: "form-control datepicker", id: "startdate" %>
     </div>
     <div class="col-md-6">
@@ -42,7 +42,7 @@
 
   <div class="row mb-3">
     <div class="col-md-6">
-      <label for="enddate" class="form-label">Event End Date* (MM/DD/YYYY)</label>
+      <label for="enddate" class="form-label">Event End Date* (YYYY-MM-DD)</label>
       <%= form.text_field :end_date, class: "form-control datepicker", id: "enddate" %>
     </div>
     <div class="col-md-6">
@@ -62,7 +62,7 @@
     </div>
   </div>
   <div>
-  <%= form.hidden_field :paid, value: "false", id: "hidden" %>
+  <%= form.hidden_field :paid, value: 0, id: "hidden" %>
   </div>
   
   <div class="mb-3 form-check">
