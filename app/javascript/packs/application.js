@@ -13,3 +13,6 @@ Turbolinks.start()
 ActiveStorage.start()
 
 import "bootstrap"
+import "jquery-ui"
+import "bootstrap-datepicker"
+import "packs/scripts"

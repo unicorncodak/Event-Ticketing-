@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  resources :categories
   resources :users
   resources :events
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  root 'events#index'
+  root 'events#dashboard'
   get 'sign_up', to: 'registrations#new'
   post 'sign_up', to: 'registrations#create'
   get 'sign_in', to: 'sessions#new'

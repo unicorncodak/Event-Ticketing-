@@ -1,6 +1,21 @@
-<h1>Editing Event</h1>
+<div id="layoutSidenav_content">
+    <main>
+        <p id="notice"><%= notice %></p>
+        <div class="container-fluid px-4">
+        <h1 class="mt-4">Edit Event</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="<%= events_path %>">Events</a></li>
+            <li class="breadcrumb-item active">New Events</li>
+        </ol>
+        <div class="card mb-4">
+            <div class="card-body">
+                Events is a third party plugin that is used to generate the demo table below
+            </div>
+        </div>
+        <%= render 'form', event: @event %>
+        <%= link_to 'Show', @event %> |
+        <%= link_to 'Back', events_path %>
 
-<%= render 'form', event: @event %>
-
-<%= link_to 'Show', @event %> |
-<%= link_to 'Back', events_path %>
+        </div>
+    </main>
+</div>

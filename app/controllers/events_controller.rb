@@ -5,6 +5,7 @@ class EventsController < ApplicationController
   # GET /events or /events.json
   def index
     @events = Event.all
+    @category = get_categories
   end
 
   # GET /events/1 or /events/1.json
@@ -14,16 +15,19 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    @category = get_categories
   end
 
   # GET /events/1/edit
   def edit
   end
 
+  def dashboard
+  end
   # POST /events or /events.json
   def create
     @event = Event.new(event_params)
-
+    @event.user_id = session["user_id"]
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: "Event was successfully created." }
@@ -65,6 +69,17 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:name, :description, :location, :category, :start_date, :end_date, :start_time, :end_time, :paid)
+      params.require(:event).permit(:name, :description, :location, :category_id, :user_id, :start_date, :end_date, :start_time, :end_time, :paid, :amount)
+    end
+
+    def get_categories
+      @category = Category.all
+      @cat_names = Array.new
+      @category.each do |p|
+        name = Array.new
+        name << p.title 
+        name << p.id 
+        @cat_names<<name
+      end
     end
 end

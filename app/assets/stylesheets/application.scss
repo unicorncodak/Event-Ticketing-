@@ -12,7 +12,7 @@
  */
 
  @import 'bootstrap/scss/bootstrap';
-
+ @import "bootstrap-datepicker/dist/css/bootstrap-datepicker3.standalone.css";
 
 :root {
   --bs-blue: #0d6efd;
@@ -11266,4 +11266,9 @@ body {
   width: 20px !important;
   font-size: 0.75rem;
   border-radius: 0.25rem !important;
+}
+
+.pull-right{
+    float: right;
+    margin-bottom: 3px;
 }
