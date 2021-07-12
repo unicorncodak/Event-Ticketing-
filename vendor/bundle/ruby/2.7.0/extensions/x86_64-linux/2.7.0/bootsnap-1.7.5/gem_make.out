@@ -1,0 +1,15 @@
+current directory: /mnt/c/tix/tix/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.7.5/ext/bootsnap
+/home/namzy/.rbenv/versions/2.7.2/bin/ruby -I /home/namzy/.rbenv/versions/2.7.2/lib/ruby/2.7.0 -r ./siteconf20210712-15648-1t972c.rb extconf.rb
+creating Makefile
+
+current directory: /mnt/c/tix/tix/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.7.5/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /mnt/c/tix/tix/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.7.5/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.so
+
+current directory: /mnt/c/tix/tix/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.7.5/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20210712-15648-43pmuo/bootsnap
